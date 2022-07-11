@@ -1,3 +1,3 @@
-module golang-united-school-homework-7
+module coverage
 
 go 1.18
