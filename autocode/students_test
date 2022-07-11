@@ -20,39 +20,39 @@ func init() {
 
 // WRITE YOUR CODE BELOW
 var (
-	P1 = Person {
-		firstName: "a",
-		lastName: "a",
+	Pone = Person {
+		firstName: "Annd",
+		lastName: "Anikeyev",
 		birthDay: time.Now(),
 	}
-	P2 = Person {
-		firstName: "b",
-		lastName: "b",
+	Ptwo = Person {
+		firstName: "Boris",
+		lastName: "Bobkov",
 		birthDay: time.Now(),
 	}
-	P3 = Person {
-		firstName: "c",
-		lastName: "c",
+	Pthree = Person {
+		firstName: "Dima",
+		lastName: "Dudkin",
 		birthDay: time.Now(),
 	}
 )
 
 func TestSwapPeople(t *testing.T) {
 	t.Parallel()
-	people := People {P1, P2, P3}
+	people := People {Pone, Ptwo, Pthree}
 	people.Swap(0, 2)
 
-	if (P1 != people[2]) && (P3 != people[0]) && (P2 == people[1]) {
+	if (Pone != people[2]) && (Pthree != people[0]) && (Ptwo == people[1]) {
 		t.Errorf("persons didn't swap")
 	}
 }
 
 func TestSwapPeopleWithSameIndex(t *testing.T) {
 	t.Parallel()
-	people := People {P1, P2, P3}
+	people := People {Pone, Ptwo, Pthree}
 	people.Swap(0, 0)
 
-	if !((P1 == people[0]) && (P2 == people[1]) && (P3 == people[2])) {
+	if !((Pone == people[0]) && (Ptwo == people[1]) && (Pthree == people[2])) {
 		t.Errorf("persons should not to swap")
 	}
 }
@@ -64,8 +64,8 @@ func TestPeopleLen(t *testing.T) {
 		Expected int
 	} {
 		"empty": {People{}, 0},
-		"single person": {People{P1}, 1},
-		"many persons": {People{P1, P2, P3}, 3},
+		"single person": {People{Pone}, 1},
+		"many persons": {People{Pone, Ptwo, Pthree}, 3},
 	}
 	for name, tcase := range table {
 		t.Run(name, func(t *testing.T) {
